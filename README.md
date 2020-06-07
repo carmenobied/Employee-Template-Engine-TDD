@@ -68,7 +68,7 @@ app.js         // Runs the application
 ## Usage
 ```
 Key Components Used:
-OOP - JavaScript - Node.js - Node CLI - package.JSON - npm - inquirer -
+OOP - JavaScript - Node.js - Node CLI - package.JSON - npm - inquirer - jest - TDD
 ```
 
 ## Contributing
