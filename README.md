@@ -12,7 +12,7 @@ so that I have quick access to emails and GitHub profiles
 ## Process
 The process involved building a software engineering team generator command line application. The application prompts the user for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of engineers and interns. A goal was also to ensure it passes all unit tests. When the user has completed building the team, the application creates an HTML file that displays a nicely formatted team roster based on the information provided by the user. 
 
-Following the [common templates for user stories](https://en.wikipedia.org/wiki/User_story#Common_templates), this command line application is framed as follows:
+This command-line application is framed as follows:
 
 * Use the [Inquirer npm package](https://github.com/SBoudrias/Inquirer.js/) to prompt the user for their email, id, and specific information based on their role with the company. For instance, an intern may provide their school, whereas an engineer may provide their GitHub username.
 
@@ -22,7 +22,7 @@ Following the [common templates for user stories](https://en.wikipedia.org/wiki/
 ![Employee Summary 1](./Assets/10-OOP-homework-demo-1.png)
 ![Employee Summary 2](./Assets/10-OOP-homework-demo-2.png)
 
-In the `Develop` folder, there is a `package.json`, so run the command `npm install`.
+The project directory contains a `package.json`, so run the command `npm install`.
 The dependencies are, [jest](https://jestjs.io/) for running the provided tests, and [inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user.
 There are also unit tests to help build the classes necessary.
 
@@ -68,7 +68,7 @@ app.js         // Runs the application
 ## Usage
 ```
 Key Components Used:
-OOP - JavaScript - Node.js - Node CLI - package.JSON - TDD - npm - inquirer
+OOP - JavaScript - Node.js - Node CLI - package.JSON - npm - inquirer -
 ```
 
 ## Contributing
