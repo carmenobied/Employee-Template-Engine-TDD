@@ -59,9 +59,12 @@ app.js         // Runs the application
 
 ## Installation
 ```
-1. Run tests
-2. Create or update classes to pass a single test case
-3. Repeat
+i. Fork the Github repository.
+ii. Clone the forked repo into your local machine using gitbash/terminal to pull the project and data.
+iii. Access the files and assets via Visual Studio to view the code.  
+iv. Run tests `npm run test`.
+v. Create or update classes to pass a single test case
+vi. Repeat as necessary.
 
 ```
 
@@ -78,4 +81,8 @@ Pull requests are welcome. Please use the [Contributor Covenant Code of Conduct]
 [MIT](https://choosealicense.com/licenses/mit/)
 
 ## Tests
-Run the tests with `npm run test`.
+```
+1. Run tests with `npm run test`
+2. Create or update classes to pass a single test case
+3. Repeat
+```
