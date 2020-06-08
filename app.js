@@ -18,28 +18,44 @@ const questionPrompts = [
     { 
       type: "input",
       name: "name",
-      message: "What is your teammate's name?",
+      message: "What is your employee's name?",
     },
     { 
       type: "input",
       name: "id",
-      message: "What is your teammate's ID?"
+      message: "What is your teammate's ID number?"
     },
     { 
       type: "input",
       name: "email",
-      message: "What is your teammate's email?"
+      message: "What is your employee's email address?"
     },
     { 
       type: "list",
       name: "role",
-      message: "What is your teammate's role?",
+      message: "What is your employee's role?",
       choices: ["Manager", "Engineer", "Intern"],
     }
   ];
+  // Role-based prompts
+  const managerPrompt= {
+    type: "input",
+    name: "officeNumber",
+    message: "What is your manager's office number?", 
+  };
+  const engineerPrompt= {
+    type: "input",
+    name: "gitUsername",
+    message: "What is your engineer's Github username?", 
+  };
+  const internPrompt= {
+    type: "input",
+    name: "internSchool",
+    message: "What school does the intern go to?",
+  };
 
-   // Answers array
-   const employeeArray = [];
+   // Answers array 
+   const employeeList = [];
 
    // Note: write code to ask different questions via inquirer depending on employee type.
 
@@ -52,12 +68,12 @@ const questionPrompts = [
     // else if (role === "Engineer") { } 
     // else if (role === "Intern") { } 
 
-    // push employee constructor object into employeesArray
-    // employeeArray.push();
+    // push employee constructor object into employeesList
+    // employeeList.push();
 
     // After the user has input all employees desired, call the `render` function (required above) and pass in an array containing all employee objects; 
     // `render` function will generate and return a block of HTML including templated divs for each employee and store generated HTML in a const
-    const allEmployees = render(employeeArray);
+    const allEmployees = render(employeeList);
 
     // Now ready to create an HTML file using the HTML returned from the `render` function. 
     // Write it to a file named `team.html` in the `output` folder. You can use the variable `outputPath` above target this location.
