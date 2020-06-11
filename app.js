@@ -10,9 +10,9 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-// Write code to use inquirer to gather information about the development team members,
-// and to create objects for each team member (using the correct classes as blueprints!)
+// Write code to use inquirer to gather information about the development team members, and to create objects for each team member (using the correct classes as blueprints!)
 
+// Question Prompts array
 const questionPrompts = [
   {
     type: "input",
@@ -55,8 +55,7 @@ const questionPrompts = [
   }
 ];
 
-// Role-based prompts
-
+// Role-based Prompts
 const managerRole = {
   type: "input",
   name: "officeNumber",
@@ -91,20 +90,21 @@ async function init() {
   const { name, id, email, role } = await inquirer.prompt(questionPrompts);
 
   // Use if else statements based on employee roles: manager, engineer, intern  
-
   // MANAGER
   if (role === "Manager") {
     const officeNumPrompt = await inquirer.prompt(managerRole);
     const officeNumber = officeNumPrompt.number;
 
+    // manager constructor
     const addManager = new Manager(name, id, email, officeNumber);
-    employeeList.push(addManager); // push employeeInfo constructor object into employeeList array
+    employeeList.push(addManager); // push addManager into employeeList array
 
     // ENGINEER
   } else if (role === "Engineer") {
     const githubPrompt = await inquirer.prompt(engineerRole);
     const github = githubPrompt.githubUsername;
 
+    // engineer constructor
     const addEngineer = new Engineer(name, id, email, github);
     employeeList.push(addEngineer);
 
@@ -112,7 +112,8 @@ async function init() {
   } else if (role === "Intern") {
     const schoolPrompt = await inquirer.prompt(internRole);
     const school = schoolPrompt.schoolIntern
-
+    
+    // intern constructor
     const addIntern = new Intern(name, id, email, school);
     employeeList.push(addIntern);
   };
@@ -121,7 +122,7 @@ async function init() {
     // `render` function will generate and return a block of HTML including templated divs for each employee and store generated HTML in a const
     const inquirerRepeat = await inquirer.prompt(addEmployee);
     const { additionalEmployee } = inquirerRepeat;
-      if (additionalEmployee === true) {
+      if (additionalEmployee === "yes") {
         init();
       } else {
         console.log(employeeList)
