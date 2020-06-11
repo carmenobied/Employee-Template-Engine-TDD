@@ -18,8 +18,8 @@ const questionPrompts = [
       type: "input",
       name: "name",
       message: "What is your employee's name?",
-      validate: function(answer) {
-        if (answer.length < 1) {
+      validate: function(response) {
+        if (response.length < 1) {
             return 'Please enter valid name';
         }
         return true;
@@ -29,8 +29,8 @@ const questionPrompts = [
       type: "input",
       name: "id",
       message: "What is your teammate's ID number?",
-      validate: function(answer) {
-        if (answer = NaN || answer.length < 1) {
+      validate: function(response) {
+        if (response = NaN || response.length < 1) {
             return 'Please enter valid ID number';
         }
         return true;
@@ -40,8 +40,8 @@ const questionPrompts = [
       type: "input",
       name: "email",
       message: "What is your employee's email address?",
-      validate: function(answer) {
-        if (answer.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+      validate: function(response) {
+        if (response.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
             return true;
         } else {
             return 'Invalid email. Please enter valid email';
