@@ -1,4 +1,5 @@
 # OOP: Template Engine - Employee Summary
+[Project license badge](https://img.shields.io/badge/license-${data.License}-brightgreen)      
 
 The goal was to build a Node CLI that takes in information about employees and generates an HTML webpage that displays summaries for each person. Since testing is a key piece in making code maintainable, the goal was also to ensure that all unit tests pass. One of the most important aspects of programming is writing code that is readable, reliable, and maintainable. Oftentimes, *how* we design our code is just as important as the code itself. Overall, the goal was to create a functional app where a user can use the CLI to generate an HTML page that displays information about their team, in which all tests must pass.
 
