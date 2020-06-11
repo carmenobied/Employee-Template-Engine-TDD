@@ -20,7 +20,7 @@ const questionPrompts = [
     message: "What is your employee's name?",
     validate: function (response) {
       if (response.length < 1) {
-        return 'Please enter valid name';
+        return 'You must enter a valid name';
       }
       return true;
     }
@@ -31,7 +31,7 @@ const questionPrompts = [
     message: "What is your teammate's ID number?",
     validate: function (response) {
       if (response = NaN || response.length < 1) {
-        return 'Please enter valid ID number';
+        return 'You must enter a valid ID number';
       }
       return true;
     }
@@ -44,7 +44,7 @@ const questionPrompts = [
       if (response.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
         return true;
       } else {
-        return 'Invalid email. Please enter valid email';
+        return 'You must enter a valid email';
       };
     }
   },
