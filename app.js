@@ -55,7 +55,9 @@ const questionPrompts = [
     choices: ["Manager", "Engineer", "Intern"],
   }
 ];
+
 // Role-based prompts
+
 const managerPrompt = {
   type: "input",
   name: "officeNumber",
@@ -72,13 +74,21 @@ const internPrompt = {
   message: "What school does the intern go to?",
 };
 
+// Additional employee
+const additionalEmployeePrompt = {
+    type: 'list',
+    name: 'additionalEmployee',
+    message: 'Would you like to add an additional employee?',
+    choices: ["yes", "no"],
+};
+
 // Answers array 
 const employeeList = [];
 
 // Use different question prompts via inquirer based on employee type.
 // Create async init function
 async function init() {
-  console.log("Please answer the following employee")
+  console.log("Please answer the following questions")
   const { name, id, email, role } = await inquirer.prompt(questionPrompts);
 
   // Use if else statements based on employee roles: manager, engineer, intern  
@@ -88,37 +98,45 @@ async function init() {
     const officeNumPrompt = await inquirer.prompt(managerPrompt);
     const officeNumber = officeNumPrompt.number;
 
-    const employeeInfo = new Manager(name, id, email, officeNumber);
-    employeeList.push(employeeInfo); // push employeeInfo constructor object into employeeList array
+    const managerInfo = new Manager(name, id, email, officeNumber);
+    employeeList.push(managerInfo); // push employeeInfo constructor object into employeeList array
 
     // ENGINEER
   } else if (role === "Engineer") {
     const githubPrompt = await inquirer.prompt(engineerPrompt);
     const github = githubPrompt.githubUsername;
 
-    const employeeInfo = new Engineer(name, id, email, github);
-    employeeList.push(employeeInfo);
+    const engineerInfo = new Engineer(name, id, email, github);
+    employeeList.push(engineerInfo);
 
     // INTERN 
   } else if (role === "Intern") {
     const schoolPrompt = await inquirer.prompt(internPrompt);
     const school = schoolPrompt.schoolIntern
-    
-    const employeeInfo = new Intern(name, id, email, school);
-    employeeList.push(employeeInfo);
+
+    const internInfo = new Intern(name, id, email, school);
+    employeeList.push(internInfo);
   };
 
-  // After the user has input all employees desired, call the `render` function (required above) and pass in an array containing all employee objects; 
-  // `render` function will generate and return a block of HTML including templated divs for each employee and store generated HTML in a const
-  const allEmployees = render(employeeList);
+    // After the user has input all employees desired, call the `render` function (required above) and pass in an array containing all employee objects; 
+    // `render` function will generate and return a block of HTML including templated divs for each employee and store generated HTML in a const
+    const inquirerRepeat = await inquirer.prompt(additionalEmployeePrompt);
+    const { additionalEmployee } = inquirerRepeat;
+      if (additionalEmployee === true) {
+        init();
+      } else {
+        console.log(employeeList)
 
-  // Now ready to create an HTML file using the HTML returned from the `render` function. 
-  // Write it to a file named `team.html` in the `output` folder. You can use the variable `outputPath` above target this location.
-  fs.writeFile(outputPath, allEmployees, function (err) {
-    if (err) {
-      throw err;
-    }
-  });
-};
+      const allEmployees = render(employeeList);
+
+        // Now ready to create an HTML file using the HTML returned from the `render` function. 
+      // Write it to a file named `team.html` in the `output` folder. You can use the variable `outputPath` above target this location.
+      fs.writeFile(outputPath, allEmployees, function (err) {
+        if (err) {
+                console.log(err);
+            }
+        });
+    };
+  };
 
 init();
