@@ -48,10 +48,15 @@ const questionPrompts = [
     }
   },
   {
-    type: "list",
+    type: "checkbox",
     name: "role",
     message: "What is your employee's role?",
     choices: ["Manager", "Engineer", "Intern"],
+    validate: response => {
+      if (response.length < 1) {
+          return "You must select one role by pressing space."
+      } return true;
+  }
   }
 ];
 
@@ -60,16 +65,34 @@ const managerRole = {
   type: "input",
   name: "officeNumber",
   message: "What is your manager's office number?",
+  validate: response => {
+    if (response.length < 1) {
+      return "You must include an office number"
+    }   
+    return true;
+  }
 };
 const engineerRole = {
   type: "input",
   name: "githubUsername",
   message: "What is your engineer's GitHub username?",
+  validate: response => {
+    if (response.length < 1) {
+      return "You must enter a Github username."
+    }   
+    return true;
+  }
 };
 const internRole = {
   type: "input",
   name: "internSchool",
   message: "What school does the intern go to?",
+  validate: response => {
+    if (response.length < 1) {
+      return "You must enter the school."
+    }   
+    return true;
+  }
 };
 
 // Add additional employee prompts
