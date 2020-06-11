@@ -40,12 +40,11 @@ const questionPrompts = [
     type: "input",
     name: "email",
     message: "What is your employee's email address?",
-    validate: function (response) {
-      if (response.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
-        return true;
-      } else {
-        return 'You must enter a valid email';
-      };
+    validate: response => {
+      if (response.length < 1) {
+          return "You must enter your email address."
+      }   
+      return true;
     }
   },
   {
