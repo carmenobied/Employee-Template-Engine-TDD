@@ -100,7 +100,7 @@ const addEmployee = {
     type: 'list',
     name: 'additionalEmployee',
     message: 'Would you like to add an additional employee?',
-    choices: ["yes", "no"],
+    choices: ["Yes", "No"],
 };
 
 // Answers array 
@@ -145,7 +145,7 @@ async function init() {
     // `render` function will generate and return a block of HTML including templated divs for each employee and store generated HTML in a const
     const inquirerRepeat = await inquirer.prompt(addEmployee);
     const { additionalEmployee } = inquirerRepeat;
-      if (additionalEmployee === "yes") {
+      if (additionalEmployee === "Yes") {
         init();
       } else {
         console.log(employeeList)
