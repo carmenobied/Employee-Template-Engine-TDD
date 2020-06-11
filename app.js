@@ -126,6 +126,7 @@ async function init() {
         init();
       } else {
         console.log(employeeList)
+        console.log("Successfully generated an HTML output!")
 
       const allEmployees = render(employeeList);
 
@@ -135,6 +136,7 @@ async function init() {
         if (err) {
                 console.log(err);
             }
+            
         });
     };
   };
