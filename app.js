@@ -86,24 +86,24 @@ async function init() {
   // MANAGER
   if (role === "Manager") {
     const officeNumPrompt = await inquirer.prompt(managerPrompt);
-    const officeNum = officeNumPrompt.number;
+    const officeNumber = officeNumPrompt.number;
 
-    const employeeInfo = new Manager(name, id, email, officeNum);
+    const employeeInfo = new Manager(name, id, email, officeNumber);
     employeeList.push(employeeInfo); // push employeeInfo constructor object into employeeList array
 
     // ENGINEER
   } else if (role === "Engineer") {
     const githubPrompt = await inquirer.prompt(engineerPrompt);
-    const githubUser = githubPrompt.githubUsername;
+    const github = githubPrompt.githubUsername;
 
-    const employeeInfo = new Engineer(name, id, email, githubUser);
+    const employeeInfo = new Engineer(name, id, email, github);
     employeeList.push(employeeInfo);
 
     // INTERN 
   } else if (role === "Intern") {
     const schoolPrompt = await inquirer.prompt(internPrompt);
-    const schoolInfo = schoolPrompt.schoolIntern
-    const employeeInfo = new Intern(name, id, email, schoolInfo);
+    const school = schoolPrompt.schoolIntern
+    const employeeInfo = new Intern(name, id, email, school);
     employeeList.push(employeeInfo);
   };
 
