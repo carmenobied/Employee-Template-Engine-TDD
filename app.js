@@ -78,8 +78,8 @@ const employeeList = [];
 // Use different question prompts via inquirer based on employee type.
 // Create async init function
 async function init() {
-  const employeeInput = await inquirer.prompt(questionPrompts);
-  const { name, id, email, role } = employeeInput;
+  console.log("Please answer the following employee")
+  const { name, id, email, role } = await inquirer.prompt(questionPrompts);
 
   // Use if else statements based on employee roles: manager, engineer, intern  
 
@@ -103,6 +103,7 @@ async function init() {
   } else if (role === "Intern") {
     const schoolPrompt = await inquirer.prompt(internPrompt);
     const school = schoolPrompt.schoolIntern
+    
     const employeeInfo = new Intern(name, id, email, school);
     employeeList.push(employeeInfo);
   };
