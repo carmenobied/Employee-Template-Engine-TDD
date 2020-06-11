@@ -10,7 +10,6 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
@@ -19,16 +18,35 @@ const questionPrompts = [
       type: "input",
       name: "name",
       message: "What is your employee's name?",
+      validate: function(answer) {
+        if (answer.length < 1) {
+            return 'Please enter valid name';
+        }
+        return true;
+      }
     },
     { 
       type: "input",
       name: "id",
-      message: "What is your teammate's ID number?"
+      message: "What is your teammate's ID number?",
+      validate: function(answer) {
+        if (answer = NaN || answer.length < 1) {
+            return 'Please enter valid ID number';
+        }
+        return true;
+      }
     },
     { 
       type: "input",
       name: "email",
-      message: "What is your employee's email address?"
+      message: "What is your employee's email address?",
+      validate: function(answer) {
+        if (answer.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+            return true;
+        } else {
+            return 'Invalid email. Please enter valid email';
+        };
+      }
     },
     { 
       type: "list",
