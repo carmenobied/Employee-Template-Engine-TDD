@@ -30,7 +30,7 @@ const questionPrompts = [
     name: "id",
     message: "What is your teammate's ID number?",
     validate: function (response) {
-      if (response = NaN || response.length < 1) {
+      if (response.length < 1) {
         return 'You must enter a valid ID number';
       }
       return true;
@@ -42,7 +42,7 @@ const questionPrompts = [
     message: "What is your employee's email address?",
     validate: response => {
       if (response.length < 1) {
-          return "You must enter your email address."
+        return "You must enter your email address."
       }   
       return true;
     }
