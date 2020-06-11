@@ -57,24 +57,24 @@ const questionPrompts = [
 
 // Role-based prompts
 
-const managerPrompt = {
+const managerRole = {
   type: "input",
   name: "officeNumber",
   message: "What is your manager's office number?",
 };
-const engineerPrompt = {
+const engineerRole = {
   type: "input",
   name: "githubUsername",
   message: "What is your engineer's GitHub username?",
 };
-const internPrompt = {
+const internRole = {
   type: "input",
   name: "internSchool",
   message: "What school does the intern go to?",
 };
 
-// Additional employee
-const additionalEmployeePrompt = {
+// Add additional employee prompts
+const addEmployee = {
     type: 'list',
     name: 'additionalEmployee',
     message: 'Would you like to add an additional employee?',
@@ -94,32 +94,32 @@ async function init() {
 
   // MANAGER
   if (role === "Manager") {
-    const officeNumPrompt = await inquirer.prompt(managerPrompt);
+    const officeNumPrompt = await inquirer.prompt(managerRole);
     const officeNumber = officeNumPrompt.number;
 
-    const managerInfo = new Manager(name, id, email, officeNumber);
-    employeeList.push(managerInfo); // push employeeInfo constructor object into employeeList array
+    const addManager = new Manager(name, id, email, officeNumber);
+    employeeList.push(addManager); // push employeeInfo constructor object into employeeList array
 
     // ENGINEER
   } else if (role === "Engineer") {
-    const githubPrompt = await inquirer.prompt(engineerPrompt);
+    const githubPrompt = await inquirer.prompt(engineerRole);
     const github = githubPrompt.githubUsername;
 
-    const engineerInfo = new Engineer(name, id, email, github);
-    employeeList.push(engineerInfo);
+    const addEngineer = new Engineer(name, id, email, github);
+    employeeList.push(addEngineer);
 
     // INTERN 
   } else if (role === "Intern") {
-    const schoolPrompt = await inquirer.prompt(internPrompt);
+    const schoolPrompt = await inquirer.prompt(internRole);
     const school = schoolPrompt.schoolIntern
 
-    const internInfo = new Intern(name, id, email, school);
-    employeeList.push(internInfo);
+    const addIntern = new Intern(name, id, email, school);
+    employeeList.push(addIntern);
   };
 
     // After the user has input all employees desired, call the `render` function (required above) and pass in an array containing all employee objects; 
     // `render` function will generate and return a block of HTML including templated divs for each employee and store generated HTML in a const
-    const inquirerRepeat = await inquirer.prompt(additionalEmployeePrompt);
+    const inquirerRepeat = await inquirer.prompt(addEmployee);
     const { additionalEmployee } = inquirerRepeat;
       if (additionalEmployee === true) {
         init();
