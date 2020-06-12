@@ -48,51 +48,28 @@ const questionPrompts = [
     }
   },
   {
-    type: "checkbox",
+    type: "list",
     name: "role",
     message: "What is your employee's role?",
     choices: ["Manager", "Engineer", "Intern"],
-    validate: response => {
-      if (response.length < 1) {
-          return "You must select one role by pressing space."
-      } return true;
-  }
   }
 ];
 
 // Role-based Prompts
 const managerRole = {
   type: "input",
-  name: "officeNumber",
+  name: "officeNum",
   message: "What is your manager's office number?",
-  validate: response => {
-    if (response.length < 1) {
-      return "You must include an office number"
-    }   
-    return true;
-  }
 };
 const engineerRole = {
   type: "input",
   name: "githubUsername",
   message: "What is your engineer's GitHub username?",
-  validate: response => {
-    if (response.length < 1) {
-      return "You must enter a Github username."
-    }   
-    return true;
-  }
 };
 const internRole = {
   type: "input",
   name: "internSchool",
   message: "What school does the intern go to?",
-  validate: response => {
-    if (response.length < 1) {
-      return "You must enter the school."
-    }   
-    return true;
-  }
 };
 
 // Add additional employee prompts
@@ -100,7 +77,7 @@ const addEmployee = {
     type: 'list',
     name: 'additionalEmployee',
     message: 'Would you like to add an additional employee?',
-    choices: ["Yes", "No"],
+    choices: ["yes", "no"],
 };
 
 // Answers array 
@@ -116,7 +93,7 @@ async function init() {
   // MANAGER
   if (role === "Manager") {
     const officeNumPrompt = await inquirer.prompt(managerRole);
-    const officeNumber = officeNumPrompt.number;
+    const officeNumber = officeNumPrompt.officeNum;
 
     // manager constructor
     const addManager = new Manager(name, id, email, officeNumber);
@@ -134,7 +111,7 @@ async function init() {
     // INTERN 
   } else if (role === "Intern") {
     const schoolPrompt = await inquirer.prompt(internRole);
-    const school = schoolPrompt.schoolIntern
+    const school = schoolPrompt.internSchool;
     
     // intern constructor
     const addIntern = new Intern(name, id, email, school);
@@ -145,13 +122,13 @@ async function init() {
     // `render` function will generate and return a block of HTML including templated divs for each employee and store generated HTML in a const
     const inquirerRepeat = await inquirer.prompt(addEmployee);
     const { additionalEmployee } = inquirerRepeat;
-      if (additionalEmployee === "Yes") {
+      if (additionalEmployee === "yes") {
         init();
       } else {
         console.log(employeeList)
-        console.log("Successfully generated an HTML output!")
 
       const allEmployees = render(employeeList);
+      console.log("Successfully generated an HTML output!")
 
         // Now ready to create an HTML file using the HTML returned from the `render` function. 
       // Write it to a file named `team.html` in the `output` folder. You can use the variable `outputPath` above target this location.
@@ -159,7 +136,6 @@ async function init() {
         if (err) {
                 console.log(err);
             }
-            
         });
     };
   };
