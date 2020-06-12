@@ -48,7 +48,9 @@ See full video demostrating app functionality and tests in Assets/templateEngine
 ```
 * Demo demostrating all passed tests:
 
-![Employee Template Tests](./Assets//templateEngine_tests.gif)
+![Employee Template Tests](./Assets/templateEngine_tests.gif)
+
+![Employee Template Tests](./Assets/tests_screenshot.png)
 
 ## Contributing
 Pull requests are welcome. Please use the [Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.md) and for major changes, please open an issue beforehand to discuss the changes.
