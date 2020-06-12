@@ -28,7 +28,7 @@ ii. Clone the forked repo into your local machine using gitbash/terminal to pull
 iii. Run the ommand-lines below to run the app functionality. You can also access the files and assets via Visual Studio to view the code. 
 iv. Run `npm init`.
 v. Run `node app.js`.
-iv. Run tests `npm run test`.
+iv. Run `npm run test`.
 
 ```
 
