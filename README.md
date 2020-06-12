@@ -20,8 +20,7 @@ This command-line application is framed as follows:
 * App will run as a Node CLI to gather information about each employee.
 
 * Below is an example of what the application may look like. 
-![Employee Summary 1](./Assets/10-OOP-homework-demo-1.png)
-![Employee Summary 2](./Assets/10-OOP-homework-demo-2.png)
+![Employee Template Engine](templateEngine_screenshot.png)
 
 The project directory contains a `package.json`, so run the command `npm install`.
 The dependencies are, [jest](https://jestjs.io/) for running the provided tests, and [inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user.
