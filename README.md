@@ -31,9 +31,11 @@ OOP - JavaScript - Node.js - Node CLI - package.JSON - npm - inquirer - jest - T
 ```
 
 * Below is screenshot of the application:
+
 ![Employee Template Screenshot](./Assets/templateEngine_screenshot.png)
 
 * Preview demo demostrating the app functionality:
+
 ![Employee Template Preview Gif](./Assets/templateEngine_preview.gif)
 
 See full video demostrating app functionality and tests in Assets/templateEngine_demo.mp4
@@ -45,6 +47,7 @@ See full video demostrating app functionality and tests in Assets/templateEngine
 3. Repeat
 ```
 * Demo demostrating all passed tests:
+
 ![Employee Template Tests Gif](./Assets//templateEngine_tests.gif)
 
 ## Contributing
