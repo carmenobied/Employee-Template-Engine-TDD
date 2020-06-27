@@ -5,7 +5,7 @@ The goal was to build a Node CLI that takes in information about employees and g
 
 The process involved building a software engineering team generator command line application. The application prompts the user for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of engineers and interns. A goal was also to ensure it passes all unit tests. When the user has completed building the team, the application creates an HTML file that displays a nicely formatted team roster based on the information provided by the user. 
 
-Explore the app here: https://carmenobied.github.io/Employee-Template-Engine
+Explore the app here: https://carmenobied.github.io/Employee-Template-Engine/
 
 ## User Story
 ```
