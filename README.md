@@ -1,11 +1,9 @@
-# OOP: Template Engine - Employee Summary
+# OOP: Template Engine - Employee Summary - TDD
 ![Project license badge](https://img.shields.io/badge/license-MIT-brightgreen)
 
 The goal was to build a Node CLI that takes in information about employees and generates an HTML webpage that displays summaries for each person. Since testing is a key piece in making code maintainable, the goal was also to ensure that all unit tests pass. One of the most important aspects of programming is writing code that is readable, reliable, and maintainable. Oftentimes, *how* we design our code is just as important as the code itself. Overall, the goal was to create a functional app where a user can use the CLI to generate an HTML page that displays information about their team, in which all tests must pass.
 
-The process involved building a software engineering team generator command line application. The application prompts the user for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of engineers and interns. A goal was also to ensure it passes all unit tests. When the user has completed building the team, the application creates an HTML file that displays a nicely formatted team roster based on the information provided by the user. 
-
-Explore the app here: https://carmenobied.github.io/Employee-Template-Engine/
+The process involved building a software engineering team generator command line application. The application prompts the user for information about the team manager and then information about the team members. The user can input any number of team members, and they may be a mix of engineers and interns. A goal was also to ensure it passes all unit tests. When the user has completed building the team, the application creates an HTML file that displays a nicely formatted team roster based on the information provided by the user. The app implemented Test Driven Development (TDD) and Jest to set up and run all tests. 
 
 ## User Story
 ```
@@ -36,7 +34,7 @@ iv. Run `npm run test`.
 ## Usage
 ```
 Key Components Used:
-OOP - JavaScript - Node.js - Node CLI - package.JSON - npm - inquirer - jest - TDD
+OOP - JavaScript - Node.js - Node CLI - package.JSON - npm - inquirer - jest - Test Driven Development (TDD)
 ```
 
 * Below is screenshot of the application:
