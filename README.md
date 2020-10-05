@@ -28,10 +28,7 @@ ii. Clone the forked repo into your local machine using gitbash/terminal to pull
 iii. Run the command-lines below to run the app functionality. You can also access the files and assets via Visual Studio to view the code. 
 iv. Run `npm init`
 v. Run `node app.js`
-v. To install Jest, run `npm install --save-dev 
-
-
-`
+v. To install Jest, run `npm install --save-dev`
 iv. To run tests, run `npm run test`
 v. To turn on the watch mode, run `npm run test -- --watch`
 ```
